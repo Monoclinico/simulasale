@@ -1,0 +1,1 @@
+(function(b){var a=jQuery("select[name=SelectedSiteID]");a.selectOrDie();window.addEventListener("load",function(c){setTimeout(function(){a.selectOrDie("update");},1000);},false);(function(c){c.attr("title",c.text());})(jQuery(".sod_label"));}(jQuery));

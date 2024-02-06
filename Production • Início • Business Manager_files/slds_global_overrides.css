@@ -1,0 +1,5 @@
+.overview_title{padding-top:10px;font-size:18px;line-height:27px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-style:normal;font-weight:bold;color:#181818!important}
+.overview_section_title{font-size:16px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-style:normal;font-weight:normal;color:#181818}
+.overview_section_subtitle{font-size:14px;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-style:normal;font-weight:normal;color:#181818}
+.slds-context-bar__label-action{min-width:auto;font-size:13px;font-family:"Segoe UI",Arial,sans-serif;font-style:normal;font-weight:normal}ul.notification_list li div.content,.notification_description,.fav_description{margin-top:0}ul.notification_list li,ul.fav_list li{width:240px;height:153px;border-radius:12px;margin-bottom:24px;margin-left:24px}
+.leftmenu_sub_bm div[class*="bm-menu-head"]{color:#242424}
