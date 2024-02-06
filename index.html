@@ -111,7 +111,8 @@ function obterParametrosDaURL() {
 }
 
 function adicionarParametrosEAbrirURL(caminho, parametros) {
-    var urlBase = `http://${window.location.hostname}:${window.location.port}/${caminho}`;
+    var extremidade = window.location.pathname;
+    var urlBase = `http://${window.location.hostname}:${window.location.port}${extremidade}${caminho}`;
     var url = new URL(urlBase);
     for (var chave in parametros) {
         url.searchParams.set(chave, parametros[chave]);
