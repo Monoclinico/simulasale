@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial Sales</title>
+    <style>
+        body {
+            background-color: white;
+        }
+
+
+        .bloco_login {
+        	display: block;
+            position: absolute;
+            min-width: 180px;
+            margin: 0 auto;
+            z-index: 100000;
+            background-color: rgba(255, 255, 255, 0);
+            top: 50%;
+            left: 50%;
+            padding: 10px;
+            transform: translate;
+            transform: translate(-50%, -50%);
+            border: 4px solid #ffffff00;
+            border-radius: 20px;
+        }
+
+        .bloco_login input {
+            width: 100%;
+            padding: 2px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+            font-size: 1.5em;
+            color: black;
+            font-weight: 500;
+        }
+        .bloco_login input::placeholder {
+            color: black;
+            opacity: 1;
+        }
+
+        #btn_logar {
+            display: block;
+            position: relative;
+            margin: 0 auto;
+            font-size: 20px;
+
+        }
+        #acesso {
+            color: red;
+            display: none;
+            font-size: 20px;
+            font-weight: 900;
+            background-color: transparent;
+            margin: 0 auto;
+            text-align: center;
+        }
+        #fora {
+            display: none;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            font-size: 2em;
+            color: red;
+            top: 50%;
+            left: 50%;
+            z-index: 1000000000000;
+            background-color: black;
+            transform: translate(-50%, -50%);
+        }
+
+
+
+    </style>
+</head>
+<body>
+    <div id="id_bloco_login" class="bloco_login">
+        <input id="usuario" type="text" placeholder="Usuário" required>
+        <input id="senha" type="password" placeholder="Senha"  required>
+        <button id="btn_logar" type="submit">Entrar</button>
+        <p id="acesso">Acesso Negado</p>
+    </div>
+    <div id="fora">
+        <p>Sistema indisponível</p>
+    </div>
+
+</body>
+    <script type="text/javascript">
+
+const ac_us = "avon";
+const ac_se = "avon@2024";
+const ac_at = true;
+
+
+function obterParametrosDaURL() {
+    var queryString = window.location.search.substring(1);
+    var pares = queryString.split("&");
+    var parametros = {};
+    for (var i = 0; i < pares.length; i++) {
+        var par = pares[i].split("=");
+        var chave = decodeURIComponent(par[0]);
+        var valor = decodeURIComponent(par[1] || "");
+        parametros[chave] = valor;
+    }
+
+    return parametros;
+}
+
+function adicionarParametrosEAbrirURL(caminho, parametros) {
+    var urlBase = `http://${window.location.hostname}:${window.location.port}/${caminho}`;
+    var url = new URL(urlBase);
+    for (var chave in parametros) {
+        url.searchParams.set(chave, parametros[chave]);
+    }
+    window.open(url.toString(), "_self");
+}
+
+function login() {
+
+    let bloco_login = document.getElementById("id_bloco_login");
+    let input_usuario = document.getElementById("usuario");
+    let input_senha = document.getElementById("senha");
+    
+
+    let u = sessionStorage.getItem("usuario");
+    let s = sessionStorage.getItem("senha");
+
+    if((u == ac_us) && (s == ac_se)){
+        input_usuario.value =  sessionStorage.getItem("usuario");
+        input_senha.value = sessionStorage.getItem("senha");
+    }
+    
+    if ((ac_se == input_senha.value.toString()) && (ac_us == input_usuario.value.toString())){
+        bloco_login.style = "display: none;";
+        sessionStorage.setItem("usuario", ac_us);
+        sessionStorage.setItem("senha", ac_se)
+        adicionarParametrosEAbrirURL("menu-tutorial.html", {})
+       
+    }else {
+       let acesso = document.getElementById("acesso");
+       acesso.style = " display: block;";
+    }
+    
+}
+
+
+let botao_logar = document.getElementById("btn_logar");
+
+if (ac_at){
+    botao_logar.addEventListener("click",login);
+    let u = sessionStorage.getItem("usuario");
+    let s = sessionStorage.getItem("senha");
+
+    if((u == ac_us) && (s == ac_se)){
+        login();
+    }
+
+}else{
+    document.getElementById("fora").style.display = "block";
+
+}
+
+resizeDiv();
+
+
+    </script>
+</html>
