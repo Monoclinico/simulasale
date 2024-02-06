@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-BR"><head><meta http-equiv="Content-Type"
+            content="text/html; charset=UTF-8">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Commerce Cloud Account Manager</title>
+        <style type="text/css">
+            .dicas {
+                background-color: #ffd4a1;
+                color: black;
+                font-weight: 700;
+                padding: 5px;
+                width: fit-content;
+                height: fit-content;
+                margin: 5px;
+                opacity: 0; /* Inicia com opacidade zero (invisível) */
+                transform: translateY(20px);
+                animation: surgir 1s ease-out forwards;
+            }
+
+            .animated-border {
+            border: 2px dashed #ff0000;
+        
+            animation: pulse 1s infinite; /* 2s duration, infinite loop */
+        }
+
+    
+        #voltar_menu {
+            position: absolute;
+            display: block;
+            width: fit-content;
+            height: fit-content;
+            bottom: 10px;
+            padding: 0;
+            left: 10px;
+            border: none;
+            background-color: #00629b;
+            padding: 10px 10px;
+            margin: 20px;
+            cursor: pointer;
+            box-shadow: 2px 2px 4px 2px black;
+            border: none;
+            border-radius: 3px;
+            z-index: 999999999999999999999999;
+        }
+        #voltar_menu p {
+            margin: 0;
+            padding: 0;
+            color: white;
+            font-weight: 700;
+            font-size: 0.8em;
+            text-transform: uppercase;
+        }
+
+        @keyframes pulse {
+            0% {
+                border-width: 2px;
+            }
+            100% {
+                border-width: 4px;
+            }
+        }
+
+
+            @keyframes surgir {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            }
+        </style>
+        <link
+            rel="icon" type="image/x-icon"
+            href="https://account.demandware.com/dwsso/XUI/themes/salesforce/images/favicon/favicon-32x32.png"><link
+            rel="shortcut icon" type="image/x-icon"
+            href="https://account.demandware.com/dwsso/XUI/themes/salesforce/images/favicon/favicon-32x32.png"><link
+            rel="stylesheet" type="text/css"
+            href="./Commerce Cloud Account Manager_files/bootstrap-3.4.1-custom.d66c49e73a.css"><link
+            rel="stylesheet" type="text/css"
+            href="./Commerce Cloud Account Manager_files/structure.17a1b44c02.css"><link
+            rel="stylesheet" type="text/css"
+            href="./Commerce Cloud Account Manager_files/theme-salesforce.css">
+
+    </head>
+    <body style="display:none">
+        <div id="messages" class="clearfix"></div>
+        <div id="wrapper" aria-busy="false"><div id="login-base">
+                <div id="loginBaseLogo" class="main-logo-holder"><img
+                        class="main-logo"
+                        src="./Commerce Cloud Account Manager_files/2016sf_CommerceCloud_logo_RGB.png"
+                        height="150px" alt="Salesforce Commerce Cloud">
+                </div>
+                <div id="content">
+                    <div class="container">
+                        <div id="etapa_3" class="text-center" style="display: none">
+                            <div class="page-header"><h1 id="sf-account-link-heading" class="text-center">Link with a Salesforce Account</h1></div>
+                            <div class="0" role="presentation">You can link your Account Manager account with a Salesforce account.
+
+                        </div>
+                    </div>
+                    
+
+                        <div
+                            class="form login col-sm-6 col-sm-offset-3"
+                            >
+                            <fieldset class="row">
+                                <legend class="sr-only">Log in</legend>
+
+                                <div id="form-1" class="form-group">
+                                    <div>
+                                        <div id="login_email" style="display: block">
+                                            <p class="dicas">
+                                                Insira seu e-mail de acesso (coloque o e-mail de exemplo: sales_treina@csu.com.br)
+                                            </p>
+                                        <label
+                                            class="aria-label sr-only separator"
+                                            for="idToken1">
+                                            <span>User Name</span>
+                                        </label>
+                                        <div class="animated-border">
+                                        <input type="text" id="idToken1"
+                                            name="callback_0" value
+                                            data-validator="required" required
+                                            data-validator-event="keyup"
+                                            class="form-control input-lg"
+                                            placeholder="User Name" autofocus>
+                                            </div>
+                                        </div>
+
+                                        <div id="login_senha" style="display: none"> 
+                                            <p class="dicas">
+                                                Insira sua senha de acesso (coloque a senha de exemplo: 123456)
+                                            </p>
+                                        <label class="aria-label sr-only separator" for="idToken2">
+                                                <span>Password</span>
+                                              </label>
+                                              <div class="animated-border">        
+                                        <input type="password" id="idToken2" name="callback_1" value="" data-validator="required" required="" data-validator-event="keyup" class="form-control input-lg" placeholder="Password" spellcheck="false">
+                                        </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div id="form-2"  style="display: none" class="form-group">
+                                    
+                                    <input id="idToken2_0" name="callback_1" type="submit" role="button" index="0" value="Link with a Salesforce Account" class="btn btn-lg btn-block btn-uppercase btn-primary">
+                                    <p class="dicas">
+                                        Clique na opção abaixo para prosseguir
+                                    </p>
+                                    <div class="animated-border">
+                                    <input id="idToken2_1" name="callback_1" type="submit" role="button" index="1" value="Log in with your Account Manager Account" class="btn btn-lg btn-block btn-uppercase btn-default">
+                                    </div>
+                
+                                </div>
+
+                                <div id="form-3" class="form-group">
+
+                                    <input id="loginButton_0"
+                                        type="button" role="button" index="0"
+                                        value="Log in"
+                                        class="btn btn-lg btn-block btn-uppercase btn-primary">
+
+                                </div>
+
+                                <nav
+                                    id="esqueceu_senha"
+                                    class="text-center clearfix remember-forgot"
+                                    role="navigation"
+                                    style="visibility: hidden">
+                                    <ul>
+                                        <li><a
+                                                href="">Forgot
+                                                Password?</a></li>
+                                    </ul>
+                                </nav>
+
+
+                            </fieldset>
+                            <input id="shadowPassword" name="shadowPassword"
+                                type="password"
+                                style="visibility: hidden;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer id="footer" class="footer text-muted"><div
+                    class="container">
+                    <p>
+                        © <span id="copyright-date">2024,</span> Salesforce,
+                        Inc.
+                        All rights reserved.
+                        <br>
+                        <a href=""
+                            target="_blank">Privacy Policy</a>
+                    </p>
+
+                </div>
+            </footer>
+            <div id="dialog"></div>
+            <div id="voltar_menu"><p>Voltar ao Menu</p></div>
+        </body>
+        <script type="text/javascript">
+            var year = (new Date).getFullYear();
+            document.getElementById('copyright-date').innerHTML = year + ',';
+    
+            let etapa = 1;
+            
+            let parametros = {};
+    
+            let botao_login = document.getElementById('loginButton_0');
+            let login_email = document.getElementById('login_email');
+            let idToken1 = document.getElementById('idToken1');
+            let idToken2 = document.getElementById('idToken2');
+            let login_senha = document.getElementById('login_senha');
+            let esqueceu_senha = document.getElementById('esqueceu_senha');
+            let form_1 = document.getElementById('form-1');
+            let form_2 = document.getElementById('form-2');
+            let etapa_3 = document.getElementById('etapa_3');
+            let idToken2_1 = document.getElementById('idToken2_1');
+
+            let voltar_menu = document.getElementById("voltar_menu");
+
+            
+            login_email.style = "display: block;";
+            login_senha.style = "display: none;";
+            esqueceu_senha.style.visibility = "hidden";
+            etapa_3.style = "display: none;";
+            
+
+            document.addEventListener('DOMContentLoaded', function() {
+                login();
+            });
+
+            window.addEventListener("load", function () {
+                login();
+            });
+
+            function login() {
+                const ac_us = "avon";
+                const ac_se = "avon@2024";
+                let u = sessionStorage.getItem("usuario");
+                let s = sessionStorage.getItem("senha");
+                if((u != ac_us) || (s != ac_se)){
+                    adicionarParametrosEAbrirURL("index.html", {});
+                }
+
+            }
+
+
+
+            document.addEventListener('DOMContentLoaded', function() {
+                parametros = obterParametrosDaURL();
+            });
+    
+    
+            voltar_menu.addEventListener("click", function() {
+                adicionarParametrosEAbrirURL("menu-tutorial.html",{});
+            });
+    
+            botao_login.addEventListener('click', function () {
+                
+                
+                if((idToken1.value.toString().trim().length > 0) && (idToken1.value.toString().trim() == "sales_treina@csu.com.br") && (etapa == 1)){
+                    login_email.style = "display: none;";
+                    login_senha.style = "display: block;";
+                    esqueceu_senha.style.visibility = "visible";
+                    etapa = 2;
+                }
+
+
+              
+                if((idToken2.value.toString().trim().length > 0) && (etapa == 2) && (idToken2.value.toString().trim() == "123456")){
+                    form_1.style = "display: none;";
+                    form_2.style = "display: block;";
+                    botao_login.style = "display: none;";
+                    esqueceu_senha.style.visibility = "hidden";
+                    etapa_3.style = "display: block;";
+                    
+                }
+    
+                       
+    
+            });
+    
+    
+            idToken2_1.addEventListener('click', function () {
+    
+                adicionarParametrosEAbrirURL("inicio.html",parametros);
+    
+            });
+        
+            function obterParametrosDaURL() {
+                var queryString = window.location.search.substring(1);
+                var pares = queryString.split("&");
+                var parametros = {};
+                for (var i = 0; i < pares.length; i++) {
+                    var par = pares[i].split("=");
+                    var chave = decodeURIComponent(par[0]);
+                    var valor = decodeURIComponent(par[1] || "");
+                    parametros[chave] = valor;
+                }
+    
+                return parametros;
+            }
+    
+            function adicionarParametrosEAbrirURL(caminho, parametros) {
+                var extremidade = "/simulasale/";
+                var urlBase = `http://${window.location.hostname}:${window.location.port}${extremidade}${caminho}`;
+                var url = new URL(urlBase);
+                for (var chave in parametros) {
+                    url.searchParams.set(chave, parametros[chave]);
+                }
+                window.open(url.toString(), "_self");
+            }
+    
+    
+    
+        </script>
+        </html>
